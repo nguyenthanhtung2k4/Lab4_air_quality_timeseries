@@ -1,5 +1,5 @@
 import os
-import papermill as pm
+import papermill as pm # type: ignore
 
 # Run notebooks end-to-end (classification + regression + ARIMA)
 os.makedirs("notebooks/runs", exist_ok=True)
