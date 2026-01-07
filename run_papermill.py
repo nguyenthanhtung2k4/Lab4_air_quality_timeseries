@@ -70,17 +70,18 @@ pm.execute_notebook(
     "notebooks/runs/arima_forecasting_run.ipynb",
     parameters=dict(
         RAW_ZIP_PATH="data/raw/PRSA2017_Data_20130301-20170228.zip",
-        STATION="Aotizhongxin",
+        STATION="Dongsi",  # Thay đổi trạm để thí nghiệm
         VALUE_COL="PM2.5",
         CUTOFF="2017-01-01",
-        P_MAX=3,
-        Q_MAX=3,
+        P_MAX=2,  # Giảm xuống để chạy nhanh hơn (9 models thay vì 48)
+        Q_MAX=2,  # Giảm xuống để chạy nhanh hơn
         D_MAX=2,
-        IC="aic",
-        ARTIFACTS_PREFIX="arima_pm25",
+        IC="bic",  # Thử BIC thay vì AIC
+        ARTIFACTS_PREFIX="arima_dongsi_experiment",  # Đổi tên output
     ),
     language="python",
     kernel_name=KERNEL,
 )
 
-print("Đã chạy xong pipeline (classification + regression + ARIMA)")
+print("✅ Đã chạy xong FULL pipeline (classification + regression + ARIMA với tham số mới)")
+print("📊 ARIMA: Trạm Dongsi, P_MAX=2, Q_MAX=2, IC=BIC")

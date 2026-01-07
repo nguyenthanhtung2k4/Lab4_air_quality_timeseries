@@ -1,0 +1,26 @@
+{
+  "station": "Dongsi",
+  "value_col": "PM2.5",
+  "cutoff": "2017-01-01",
+  "best_order": [
+    1,
+    0,
+    2
+  ],
+  "ic": "bic",
+  "best_score": 295591.4734520777,
+  "rmse": 112.02875860681584,
+  "mae": 82.072057963236,
+  "diagnostics": {
+    "n": 35064,
+    "missing_ratio": 0.0,
+    "min": 3.0,
+    "max": 737.0,
+    "mean": 86.14424338352727,
+    "std": 86.26024603279365,
+    "adf_pvalue": 0.0,
+    "kpss_pvalue": 0.1,
+    "autocorr_lag_24": 0.40559002577087694,
+    "autocorr_lag_168": 0.022955902793332594
+  }
+}
