@@ -4,7 +4,7 @@ import papermill as pm
 # Run notebooks end-to-end (classification + regression + ARIMA)
 os.makedirs("notebooks/runs", exist_ok=True)
 
-KERNEL = "beijing_env"
+KERNEL = "python3"
 
 pm.execute_notebook(
     "notebooks/preprocessing_and_eda.ipynb",
@@ -12,7 +12,7 @@ pm.execute_notebook(
     parameters=dict(
         USE_UCIMLREPO=False,
         RAW_ZIP_PATH="data/raw/PRSA2017_Data_20130301-20170228.zip",
-        OUTPUT_CLEANED_PATH="data/processed/cleaned.parquet",
+        OUTPUT_CLEANED_PATH="data/processed/cleaned.parquet", 
         LAG_HOURS=[1, 3, 24],
     ),
     language="python",
@@ -73,9 +73,9 @@ pm.execute_notebook(
         STATION="Aotizhongxin",
         VALUE_COL="PM2.5",
         CUTOFF="2017-01-01",
-        P_MAX=3,
-        Q_MAX=3,
-        D_MAX=2,
+        P_MAX=2,
+        Q_MAX=2,
+        D_MAX=1,
         IC="aic",
         ARTIFACTS_PREFIX="arima_pm25",
     ),
